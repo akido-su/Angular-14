@@ -1,0 +1,7 @@
+<h1>Your Card</h1>
+<ng-container *ngIf="getCard().length > 0">
+    <div *ngFor="let book of getCard();let i =index">
+        <p class="my-4 text-2xl">{{i}}. {{book.name}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="getCard().length === 0">No books in your card..</ng-container>

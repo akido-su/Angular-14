@@ -1,0 +1,24 @@
+<h2>Programming Books!</h2>
+
+<div><button (click)='toggleBooks()'>
+        <ng-container *ngIf="!isBooksHidden">Show Books</ng-container>
+        <ng-container *ngIf="isBooksHidden">Hide Books</ng-container>
+    </button></div>
+<br>
+<div><button (click)='isBooksHidden = !isBooksHidden'><span>{{!isBooksHidden ? 'Show' : 'Hide'}}</span> Books2</button>
+</div>
+<br>
+<input type="text" (input)="handleType($event)" />&nbsp;&nbsp;&nbsp;<span>{{myName}}</span>
+<br>
+<br>
+<input type="text" [(ngModel)]="myName2" />&nbsp;&nbsp;&nbsp;<span>{{myName2}}</span>
+
+
+<ul *ngIf="isBooksHidden">
+    <ng-container *ngFor="let book of Books;let i=index ">
+
+        <!-- <app-booklist (emitBook)="addTcart($event)" [Book]="book"></app-booklist> -->
+        <app-booklist  [Book]="book"></app-booklist>
+    </ng-container>
+
+</ul>
